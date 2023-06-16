@@ -1,0 +1,305 @@
+<div class="container" style="padding-top:10%;">
+    <div class="row">
+            <div class="col-lg-4">
+               <div class="profile-card-4 z-depth-3">
+                <div class="card">
+                  <div class="card-body text-center bg-primary rounded-top">
+                   <div class="user-box">
+                  <img src="https://th.bing.com/th/id/R.5144196eaa8b272c4880bd933c81c55c?rik=ULS6KYevlC0zKw&pid=ImgRaw&r=0"   class="hover-bg-primary text-center position-relative px-4 py-5 rounded-lg shadow"class="img-fluid" alt="feature-image">
+                  </div>
+                 
+                  <h5 class="mb-1 text-white">{{devicedetails.name}}</h5>
+                 
+                 </div>
+                 <button mat-raised-button color="warn" (click)="DeleteDevice()"> <i class="fa fa-trash"></i> delete</button>
+                  <div class="card-body">
+                    <ul class="list-group shadow-none">
+                    <li class="list-group-item">
+                      <div class="list-icon">
+                        <i class="fa fa-phone-square"></i>
+                      </div>
+                      <div class="list-details">
+                        <span>(+216){{devicedetails.telephone}}</span>
+                        <small>Mobile Number</small>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="list-icon">
+                        <i class="fa fa-clock"></i>
+                      </div>
+                      <div class="list-details">
+                        <span>{{devicedetails.date_exp | date : 'yyyy-MM-dd'}}</span>
+                        <small> date d'expiration</small>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="list-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                      </div>
+                      <div class="list-details">
+                        <span>{{devicedetails.adresse}} {{ devicedetails.ville}} {{devicedetails.code_postal}}</span>
+                        <small> Address</small>
+                      </div>
+                    </li>
+                    </ul>
+                   
+                   </div>
+                 
+                 </div>
+               </div>
+            </div>
+            <div class="col-lg-8">
+               <div class="card z-depth-3">
+                <div class="card-body">
+                <ul class="nav nav-pills nav-pills-primary nav-justified">
+                    <li class="nav-item">
+                        <a href="javascript:void();" data-target="#profile" data-toggle="pill" class="nav-link active show"><i class="icon-user"></i> <span class="hidden-xs">details</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void();" data-target="#messages" data-toggle="pill" class="nav-link"><i class="icon-envelope-open"></i> <span class="hidden-xs">Notifications</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void();" data-target="#edit" data-toggle="pill" class="nav-link"><i class="icon-note"></i> <span class="hidden-xs">Edit</span></a>
+                    </li>
+                </ul>
+                <div class="tab-content p-3">
+                    <div class="tab-pane active show" id="profile">
+                        <h5 class="mb-3" style="padding-left: 200px;">Device details</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>name :</h6>
+                                <p>
+                                    {{devicedetails.name}}
+                                </p>
+                                <h6>Num Série:</h6>
+                                <p>
+                                    {{devicedetails.serie}}
+                                </p>
+                                <h6>Type:</h6>
+                                <p>
+                                    {{devicedetails.type}}
+                                </p>
+                                <h6>CreatedAt:</h6>
+                                <p>
+                                    {{devicedetails.createdAt| date:'yyyy/MM/dd'}}
+                                </p>
+                                <h6 *ngIf="divUpdated">Updated At:</h6>
+                                <p *ngIf="divUpdated">
+                                    {{devicedetails.updatedAt | date:'yyyy/MM/dd'}}
+                                </p>
+                                
+                            </div>
+                           
+                            <div class="col-md-12">
+                                <h5 class="mt-2 mb-3"> Description :</h5>
+                                <table class="table table-hover table-striped">
+                                    <tbody>                                    
+                                        <tr>
+                                            <td>
+                                             {{devicedetails.description}}
+                                            </td>
+                                        </tr>
+
+                                       
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!--/row-->
+                    </div>
+                    <div class="tab-pane" id="messages">
+                        <div class="alert alert-info alert-dismissible" role="alert">
+                       <button type="button" class="close" data-dismiss="alert">×</button>
+                        <div class="alert-icon">
+                         <i class="icon-info"></i>
+                        </div>
+                        <div class="alert-message">
+                          <span><strong>Info!</strong> Lorem Ipsum is simply dummy text.</span>
+                        </div>
+                      </div>
+                        <table class="table table-hover table-striped">
+                            <tbody>                                    
+                                <tr>
+                                    <td>
+                                       <span class="float-right font-weight-bold">3 hrs ago</span> Here is your a link to the latest summary report from the..
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                       <span class="float-right font-weight-bold">Yesterday</span> There has been a request on your account since that was..
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                       <span class="float-right font-weight-bold">9/10</span> Porttitor vitae ultrices quis, dapibus id dolor. Morbi venenatis lacinia rhoncus. 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                       <span class="float-right font-weight-bold">9/4</span> Vestibulum tincidunt ullamcorper eros eget luctus. 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                       <span class="float-right font-weight-bold">9/4</span> Maxamillion ais the fix for tibulum tincidunt ullamcorper eros. 
+                                    </td>
+                                </tr>
+                            </tbody> 
+                        </table>
+                    </div>
+                    <div class="tab-pane" id="edit">
+                        <div class="container-fluid">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="form-validation">
+                                                <form class="form-valide" action="#" method="post" (ngSubmit)=" f.form.valid && UpdateDevice() " #f="ngForm">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label" for="val-name">nom <span class="text-danger">*</span>
+                                                        </label>
+                                                        <div class="col-lg-8">
+                                                            <input type="text" class="form-control" id="val-username" name="val-name" placeholder="Enter a name.." required [(ngModel)]="deviceCreation.name" name="name"  #name="ngModel">
+                                                        </div>
+                                                        
+                                                    </div>
+
+
+
+                                                    <div class="col-6" style="margin-left: 32%;">
+                                                        <div
+                                                        class="alert alert-danger alert-dismissible fade show" 
+                                                        role="alert"
+                                                        *ngIf="name.errors && f.submitted">
+                                                        name is required!
+                                                      </div>
+                                                  </div>
+                        
+                                                   
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label" for="val-description">description <span class="text-danger"></span>
+                                                        </label>
+                                                        <div class="col-lg-8">
+                                                            <textarea class="form-control" id="val-suggestions" name="val-description" rows="5" placeholder="description ..."  required [(ngModel)]="deviceCreation.description" name="description" #description="ngModel"></textarea>
+                                                        </div>
+                
+                                                    </div>
+                
+                                                    <div class="col-6" style="margin-left: 32%;">
+                                                        <div
+                                                        class="alert alert-danger alert-dismissible fade show" 
+                                                        role="alert"
+                                                        *ngIf="description.errors && f.submitted">
+                                                        description is required!
+                                                      </div>
+                                                  </div>
+                
+                                                    
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label" for="val-type">type <span class="text-danger">*</span>
+                                                        </label>
+                                                        <div class="col-lg-8">
+                                                            <select class="form-control" id="val-skill" name="val-skill" required [(ngModel)]="deviceCreation.type" name="type">
+                                                                <option value="capteur">capteur</option>
+                                                                <option value="lampe">lampe</option>
+                                                                <option value="camera">camera</option>
+                                             
+                
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label" for="val-nuumeroserie">numéro série <span class="text-danger">*</span>
+                                                        </label>
+                                                        <div class="col-lg-8">
+                                                            <input type="text" class="form-control" id="val-currency" name="val-currency" placeholder="numéro série" required [(ngModel)]="deviceCreation.serie"name="serie" #serie="ngModel">
+                                                        </div>
+                                                    </div>
+                
+                
+                                                    <div class="col-6" style="margin-left: 32%;">
+                                                        <div
+                                                        class="alert alert-danger alert-dismissible fade show" 
+                                                        role="alert"
+                                                        *ngIf="serie.errors && f.submitted">
+                                                        description is required!
+                                                      </div>
+                                                  </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label" for="val-website">adresse <span class="text-danger">*</span>
+                                                        </label>
+                                                       
+                                                        <div class="col-4">
+                                                            <input type="adress" class="form-control" id="val-website" name="val-website" placeholder="Adresse" required [(ngModel)]="deviceCreation.adresse" name="adresse" #adresse="ngModel">
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <input type="code" placeholder="Ville" class="form-control" required [(ngModel)]="deviceCreation.ville" name="ville" #ville="ngModel">
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <input type="number" placeholder="Code postal" class="form-control" required [(ngModel)]="deviceCreation.code_postal" name="code_postal" #code="ngModel">
+                                                        </div>
+                                                         
+                                                    </div>
+                
+                                                    <div class="col-6" style="margin-left: 32%;">
+                                                        <div
+                                                        class="alert alert-danger alert-dismissible fade show" 
+                                                        role="alert"
+                                                        *ngIf="adresse.errors && f.submitted || ville.errors &&f.submitted || code.errors && f.submitted">
+                                                        adresse is required!
+                                                      </div>
+                                                  </div>
+                
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label" for="val-phoneus">Phone (TUN) <span class="text-danger">*</span>
+                                                        </label>
+                                                        <div class="col-lg-8">
+                                                            <input type="text" class="form-control" id="val-phoneus" name="val-phoneus" placeholder="+(212)25 999 000" required [(ngModel)]="deviceCreation.telephone" name="telephone" #phone="ngModel">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6" style="margin-left: 32%;">
+                                                        <div
+                                                        class="alert alert-danger alert-dismissible fade show" 
+                                                        role="alert"
+                                                        *ngIf="phone.errors && f.submitted ">
+                                                        telephone is required!
+                                                      </div>
+                                                  </div>
+                                                 
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label" for="val-range">date d'expiration <span class="text-danger">*</span>
+                                                        </label>
+                                                        <div class="col-8">
+                                                            <input type="date"  class="col-lg-4 col-form-label"  for="val-date"  name="date dexpiration" required [(ngModel)]="deviceCreation.date_exp" name="date_exp" #date="ngModel"><a>{{devicedetails.date_exp | date : 'yyyy-MM-dd'}}</a>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                    <div class="col-6" style="margin-left: 32%;">
+                                                        <div
+                                                        class="alert alert-danger alert-dismissible fade show" 
+                                                        role="alert"
+                                                        *ngIf="date.errors && f.submitted ">
+                                                        date d'expiration is required!
+                                                      </div>
+                                                  </div>
+                                                    <div class="form-group row">
+                                                        <div class="col-lg-12 "  style="padding-left:380px ;">
+                                                            <button type="submit"mat-flat-button color="primary" >save changes</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+          </div>
+          </div>
+            
+        </div>
+    </div>

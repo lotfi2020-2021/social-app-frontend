@@ -1,0 +1,46 @@
+
+
+
+ 
+  
+
+  
+
+
+ 
+  
+    <div class="container" style="padding-top:100px ;">
+       
+        <div class="row">
+           
+            <div class="col-lg-12 text-center"  style="padding-top:10px">
+                <h2 class="section-title">Devices</h2>
+            </div>
+    
+            <form  style="padding-top:10pxpx; ; padding-bottom: 20px;">
+              <input type="text"  name="name" id='name' placeholder="Search.." [(ngModel)]="searchByName"  (ngModelChange)="filterArray()" >
+            </form>
+            
+            <div class="col-lg-4 col-sm-6 mb-lg- mb-4"  *ngFor="let item of  afterFilter" >
+                <div class="hover-bg-primary text-center position-relative px-4 py-5 rounded-lg shadow"> <img src="https://th.bing.com/th/id/R.5144196eaa8b272c4880bd933c81c55c?rik=ULS6KYevlC0zKw&pid=ImgRaw&r=0" class="img-fluid" alt="feature-image">
+                    <h5 class="pt-5 pb-3 text-capitalize card-title"><strong>{{item.name}}</strong></h5>
+                    <p class="mb-4">adresse: {{item.adresse}}</p>
+                    <p class="mb-4">ville: {{item.ville}}</p>
+                    <p class="mb-4">code: {{item.code_postal}}</p> 
+                    <p class="mb-4">description: {{item.description}}</p>
+                    <a class="btn btn-outline-primary" (click)="detailsDevice(item.id_device)" data-abc="true">read more</a>
+                </div>
+            </div>
+        </div>
+        </div>
+       
+        <button mat-fab color="btn-outline-primary" matTooltip="Create advice" matTooltipPosition="left" class="position-fixed"
+        style="top:100px; left:200px;" (click)="showAddDevice()">
+        <mat-icon>add advice</mat-icon>
+    </button>
+    <button mat-fab color="btn-outline-primary" matTooltip="users" matTooltipPosition="left" class="position-fixed"
+    style="top:200px; left:200px;" (click)="showlistUsers()">
+    <mat-icon>account_circle</mat-icon>
+</button>
+
+   

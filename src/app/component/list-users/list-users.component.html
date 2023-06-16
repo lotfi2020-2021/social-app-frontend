@@ -1,0 +1,91 @@
+
+
+
+
+
+ 
+  
+
+   
+
+
+
+  
+    <div class="container">
+
+        
+        <div class="row justify-content-center"  >
+            <button mat-fab color="btn-outline-primary" matTooltip="Create user" matTooltipPosition="left" class="position-fixed"
+            style="top:100px; left:100px;"  (click)='showAddmoderateur()'>
+            <mat-icon>add user</mat-icon>
+        </button>
+        <form  style="padding-top:100px; ; padding-bottom: 20px;">
+          
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Search By Role</mat-label>
+                    <mat-select name="role"   [(ngModel)]="searchByrole" (ngModelChange)="filterArray2()">
+                      <mat-option value="user">user</mat-option>
+                      <mat-option value="moderateur">moderateur</mat-option>
+                      
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+           
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label> Search By name</mat-label>
+                <input type="text" matInput  name="name" id='name'  placeholder="Search.."  [(ngModel)]="searchByName"  (ngModelChange)="filterArray()">
+              </mat-form-field>
+          </div>
+        </form>
+        
+
+          </div>
+         
+
+
+
+
+<div class="row el-element-overlay" >
+                    
+                      
+              
+                    <div class="row mt-40" >
+                        <div class="col-md-4 col-sm-6"  *ngFor="let item of  afterFilter" style="padding-bottom:40px ; padding-right: 40px;">
+                            <div class="box1"> <img src="{{item.profilePhoto}}"   height="350"  >
+                                <h3 class="title">{{item.firstName}} {{item.lastName}}  ({{item.role}} )</h3>
+                    
+                                <ul class="icon">
+                                    <li  matTooltip="user details" matTooltipPosition="left"><a   (click)='showDetailsUser(item.id)'> <i class="fa fa-user"></i></a></li>
+                                    <li  matTooltip="Change role" matTooltipPosition="left"><a  (click)='updateRole(item.id)'><i class="fa fa-shuffle"></i></a></li>
+                            
+                                    <li matTooltip="send SMS" matTooltipPosition="left" ><a (click)='showSendSMS(item.id)'><i class="fa fa-message"></i></a></li>
+                                    <li matTooltip="bloquer" matTooltipPosition="left" ><a  (click)='bloquerOrDebloquer(item.id)'><i class="fa fa-remove"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+  
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+           
+        
+
+     
